@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>Config/Res/logo.png</file>
+        <file>Config/Res/iTvm.ico</file>
+    </qresource>
+</RCC>

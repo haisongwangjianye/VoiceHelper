@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TtsWidget</class>
+ <widget class="QWidget" name="TtsWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>978</width>
+    <height>610</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="m_pBtnBatchTts">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>480</y>
+     <width>95</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>批量合成</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="WilltextEdit">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>390</y>
+     <width>871</width>
+     <height>61</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>340</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>音量：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>480</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>合成mp3文件名:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="m_YuShuCommBox">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>340</y>
+     <width>83</width>
+     <height>28</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="m_pBtnPlayVoice">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>520</y>
+     <width>95</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>播放</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="m_pBtnSelectFile">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>95</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>选择配置</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>340</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>语速：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>340</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>音调：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelTip">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>520</y>
+     <width>321</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>881</width>
+     <height>261</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="m_pBtnSelectOutDir">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>480</y>
+     <width>95</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>输出目录</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>360</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>要合成的文字:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>340</y>
+     <width>66</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>声音设置：</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="outMp3NamelineEdit">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>480</y>
+     <width>431</width>
+     <height>32</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="m_YinLiangComboBox">
+   <property name="geometry">
+    <rect>
+     <x>810</x>
+     <y>340</y>
+     <width>83</width>
+     <height>28</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="m_pBtnTts">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>480</y>
+     <width>95</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>合成</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="m_VoiceSetcomboBox">
+   <property name="geometry">
+    <rect>
+     <x>292</x>
+     <y>340</y>
+     <width>171</width>
+     <height>28</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="m_YinDiaoComboBox">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>340</y>
+     <width>83</width>
+     <height>28</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

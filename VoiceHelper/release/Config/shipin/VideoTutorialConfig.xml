@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">  
+  <dir name="日志分析"> 
+	<item name="测试" url="UDAnalysis.avi"/>    
+	<item name="测试1" url="UDAnalysis1.avi"/>    
+	<item name="测试2" url="UDAnalysis2.avi"/>    
+	<item name="测试3" url="UDAnalysis3.avi"/>    
+  </dir>
+  <dir name="数据分析">  
+	<item name="分析UD数据" url="UDAnalysis22.avi"/>  
+	<item name="分析UD数据2" url="UDAnalysis33.avi"/>
+	<item name="分析UD数据3" url="UDAnalysis44.avi"/>
+  </dir>
+</root>

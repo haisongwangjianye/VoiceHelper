@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<LineMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">  
+  <SqlExample FunName="写票张数" sql="select COUNT(*) AS 写票张数 FROM DATA_YPT_TRAN WHERE (BUSI_DATE||BUSI_TIME) &gt;'StartTime_FLAG' AND (BUSI_DATE||BUSI_TIME) &lt; 'EndTime_FLAG'; "/>  
+  <SqlExample FunName="交易张数和金额" sql="select SUM(TRANS_COUNT)  AS 交易张数,SUM(TRANS_AMOUNT) AS 交易金额 FROM TRANS_INFO_OF_MAIN_RECORD WHERE (BEGIN_DATE||BEGIN_TIME) &gt;'StartTime_FLAG' AND (BEGIN_DATE||BEGIN_TIME) &lt; 'EndTime_FLAG';"/>  
+  <SqlExample FunName="按票价查询售出张数" sql="select sum(trans_count) AS 售出张数,sum(trans_count*unPrice_FLAG) AS 售出金额 from trans_info_of_main_record where unit_price='unPrice_FLAG' AND (BEGIN_DATE||BEGIN_TIME) &gt;'StartTime_FLAG' AND (BEGIN_DATE||BEGIN_TIME) &lt; 'EndTime_FLAG';"/>  
+  <SqlExample FunName="根据订单号查询" sql="select order_no as 订单号,TRANS_ID as 交易ID,COUNT_FROM_PASSENGER as 乘客选择票数,   TRANS_COUNT as 交易张数, OUT_FAIL_COUNT as 出票失败张数,TRANS_AMOUNT as 交易金额,UNIT_PRICE as 单价    FROM TRANS_INFO_OF_MAIN_RECORD WHERE order_no='ordNo_FLAG';"/>  
+  <SqlExample FunName="根据交易ID查询写票" sql="select BUSI_DATE as 业务日期,BUSI_TIME as 业务时间,TRANS_ID as 交易ID,UP_FLAG as 是否上传,    UD_LENGTH as UD长度 FROM DATA_YPT_TRAN WHERE TRANS_ID='transID_FLAG';"/>  
+  <SqlExample FunName="box1补充数量" sql="select COALESCE(sum(AMOUNT_AFTER_CHANGE - AMOUNT_BEFORE_CHANGE),0) AS 票补充数 FROM BOX_CHANGE_INFO_TICKET WHERE  TICKET_CONTAINER_TYPE = 1 AND TICKET_BOX_NO = 1 AND (OPERATION_TYPE = 3) AND (BUSI_DATE||BUSI_TIME) &gt;'StartTime_FLAG' AND (BUSI_DATE||BUSI_TIME) &lt; 'EndTime_FLAG';"/>  
+  <SqlExample FunName="box2补充数量" sql="select COALESCE(sum(AMOUNT_AFTER_CHANGE - AMOUNT_BEFORE_CHANGE),0) AS 票补充数 FROM BOX_CHANGE_INFO_TICKET WHERE  TICKET_CONTAINER_TYPE = 1 AND TICKET_BOX_NO = 2 AND (OPERATION_TYPE = 3) AND (BUSI_DATE||BUSI_TIME) &gt;'StartTime_FLAG' AND (BUSI_DATE||BUSI_TIME) &lt; 'EndTime_FLAG';"/>  
+  <SqlExample FunName="发行数量" sql="SELECT A.ORIGIN_TICKET_BOX_NO BOXNO, COALESCE(SUM(A.OPER_COUNT),0) AS 票数,COALESCE(SUM(B.UNIT_PRICE*OPER_COUNT),0) 金额  FROM TRANS_INFO_OF_TICKET_FLOW A, TRANS_INFO_OF_MAIN_RECORD B WHERE A.TRANS_ID=B.TRANS_ID AND A.ACTION_TYPE = 3 AND B.TRANS_COUNT &gt; 0  AND A.ORIGIN_TICKET_CONTAINER_TYPE = 1  AND (A.BUSI_DATE||A.BUSI_TIME) &gt;'StartTime_FLAG' AND (A.BUSI_DATE||A.BUSI_TIME) &lt; 'EndTime_FLAG' GROUP BY BOXNO ORDER BY BOXNO;"/>
+  <SqlExample FunName="主表记录信息" sql="SELECT order_no as 订单号,TRANS_ID AS 交易ID,BEGIN_DATE AS 日期,BEGIN_TIME As 时间,UNIT_PRICE as 单价,COUNT_FROM_PASSENGER AS 乘客选择张数,TRANS_COUNT AS 实际交易数量,TRANS_AMOUNT AS 实际交易金额,OUT_FAIL_COUNT AS 写票成功但出票失败,OPER_BALANCE_FLAG as 结算标记 FROM TRANS_INFO_OF_MAIN_RECORD 
+  WHERE  (BEGIN_DATE||BEGIN_TIME) &gt;'StartTime_FLAG' AND (BEGIN_DATE||BEGIN_TIME) &lt; 'EndTime_FLAG';"/>  
+  <SqlExample FunName="单程票记录表" sql="SELECT TRANS_ID AS 交易ID,BUSI_TYPE_CN AS 业务类型,BUSI_DATE AS 日期,BUSI_TIME As 时间
+  ,CARD_SN AS 逻辑卡号,UD_LENGTH AS 交易数据长度,UD_CONTENT AS 交易数据,UP_FLAG AS 是否上传
+   FROM DATA_YPT_TRAN WHERE  (BUSI_DATE||BUSI_TIME)&gt;'StartTime_FLAG' AND (BUSI_DATE||BUSI_TIME) &lt; 'EndTime_FLAG';"/>  
+   <SqlExample FunName="一卡通充值记录表" sql="SELECT TRANS_ID AS 交易ID,BUSI_TYPE_CN AS 业务类型,BUSI_DATE AS 日期,BUSI_TIME As 时间
+  ,CARD_SN AS 逻辑卡号,UD_LENGTH AS 交易数据长度,UD_CONTENT AS 交易数据,UP_FLAG AS 是否上传
+   FROM DATA_YKT_TRAN WHERE  (BUSI_DATE||BUSI_TIME)&gt;'StartTime_FLAG' AND (BUSI_DATE||BUSI_TIME) &lt; 'EndTime_FLAG';"/>  
+</LineMap>

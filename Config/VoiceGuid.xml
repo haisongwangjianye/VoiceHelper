@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VoiceGuid>
+	<Voice playchannel="0" >
+	  <rc content="请在这里填写 您要和成的内容" rcName="content.mp3"/>
+	  <rc content="请在这里填写 您要和成的内容2" rcName="content2.mp3"/>
+	</Voice>
+</VoiceGuid>
